@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	_ "fmt"
-	"github.com/ichunt2019/go-rabbitmq/utils/rabbitmq"
+	"go-rabbitmq/utils/rabbitmq"
 )
 
 func main() {
@@ -32,18 +32,18 @@ func main() {
 		//	"a_test_0001",
 		//	"",
 		//	"",
-		//	"amqp://guest:guest@192.168.2.232:5672/",
+		//	"amqp://admin:123456@127.0.0.1:5672/",
 		//}
 
 		/*
 		 使用自定义的交换机
 		 */
 		queueExchange := rabbitmq.QueueExchange{
+			"test",
 			"a_test_0001",
-			"a_test_0001",
-			"hello_go",
+			"hello",
 			"direct",
-			"amqp://guest:guest@192.168.2.232:5672/",
+			"amqp://admin:123456@127.0.0.1:5672/",
 		}
 
 		rabbitmq.Send(queueExchange,body)

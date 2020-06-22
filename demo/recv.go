@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/ichunt2019/go-rabbitmq/utils/rabbitmq"
+	"go-rabbitmq/utils/rabbitmq"
 	"time"
 )
 
@@ -55,11 +55,11 @@ func main() {
 		runNums: 表示任务并发处理数量  一般建议 普通任务1-3    就可以了
 	 */
 	rabbitmq.Recv(rabbitmq.QueueExchange{
+		"test",
 		"a_test_0001",
-		"a_test_0001",
-		"hello_go",
+		"hello",
 		"direct",
-		"amqp://guest:guest@192.168.2.232:5672/",
+		"amqp://admin:123456@127.0.0.1:5672/",
 	},t,3)
 
 
